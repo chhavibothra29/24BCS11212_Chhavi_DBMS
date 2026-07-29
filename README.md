@@ -163,7 +163,30 @@ SELECT CUSTOMERID FROM ORDERS
 
 //Experiment - 3.4
 
--- Write your MySQL query statement below
 SELECT Employee.name,Bonus.bonus FROM Employee 
 LEFT JOIN Bonus ON Employee.empID = Bonus.empID
 WHERE bonus < 1000 OR Bonus IS NULL ;
+
+//Experiment - 4.1 
+
+select c.customer_name, o.order_date from orders as o
+left join customers as c 
+on o.customer_id = c.customer_id;
+
+select c.customer_name, o.product_name from customers as c
+left join orders as o
+on c.customer_id=o.customer_id;
+
+select p.product_name, o.order_date from products as p
+inner join orders as o
+on o.product_name=p.product_name;
+
+//Experiment - 4.2
+
+select s.*, c.* from student s
+join course c
+on s.Course_id=c.Course_id;
+ 
+select s.*, c.* from student s
+left join course c
+on s.Course_id=c.Course_id;
